@@ -1,0 +1,40 @@
+! URxvt
+! ----------------------------------------------------------------------
+
+! Scrolling
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen:   1
+URxvt.secondaryScroll:   0
+URxvt.secondaryWheel:    1
+URxvt.scrollBar:         false
+
+! Font
+URxvt.font:              xft:Iosevka:size=8
+
+! URLs
+URxvt.perl-ext-common:   default,matcher
+URxvt.url-launcher:      /usr/bin/xdg-open
+URxvt.matcher.button:    1
+URxvt.matcher.rend.0:    Uline
+
+! Colors
+URxvt.foreground: #f8f8f2
+URxvt.background: #272822
+URxvt.cursorColor: #f8f8f2
+URxvt.color0: #272822
+URxvt.color8: #75715e
+URxvt.color1: #f92672
+URxvt.color9: #f92672
+URxvt.color2: #a6e22e
+URxvt.color10: #a6e22e
+URxvt.color3: #f4bf75
+URxvt.color11: #f4bf75
+URxvt.color4: #66d9ef
+URxvt.color12: #66d9ef
+URxvt.color5: #ae81ff
+URxvt.color13: #ae81ff
+URxvt.color6: #a1efe4
+URxvt.color14: #a1efe4
+URxvt.color7: #f8f8f2
+URxvt.color15: #f9f8f5
