@@ -50,7 +50,8 @@ $ pacman -S \
   i3-wm \
   rxvt-unicode \
   dmenu \
-  i3status
+  i3status \
+  git
 ```
 
 ### Sudo
@@ -75,6 +76,8 @@ $ mkdir \
   downloads \
   pictures
 ```
+
+Clone this repository into `~/code`.
 
 ### Urxvtd
 
@@ -101,10 +104,10 @@ $ sudo servicectl enable urxvtd@sophie
 ### Xinit/Startx/I3
 
  * See the specific instructions above for graphics driver setup details.
- * Copy [`/home/sophie/.xinitrc`](/home/sophie/.xinitrc) from this repo to `~/.xinitrc`.
- * Copy [`/home/sophie/.Xresources`](/home/sophie/.Xresources) from this repo to `~/.Xresources`.
- * Copy [`/home/sophie/.config/i3/config`](/home/sophie/.config/i3/config) from this repo to `~/.config/i3/config`.
- * Copy [`/home/sophie/.config/i3status/config`](/home/sophie/.config/i3status/config) from this repo to `~/.config/i3status/config`.
+ * Link [`/home/sophie/.xinitrc`](/home/sophie/.xinitrc) from this repo to `~/.xinitrc`.
+ * Link [`/home/sophie/.Xresources`](/home/sophie/.Xresources) from this repo to `~/.Xresources`.
+ * Link [`/home/sophie/.config/i3/config`](/home/sophie/.config/i3/config) from this repo to `~/.config/i3/config`.
+ * Link [`/home/sophie/.config/i3status/config`](/home/sophie/.config/i3status/config) from this repo to `~/.config/i3status/config`.
 
 Run `startx` to test it out.
 
