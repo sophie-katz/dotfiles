@@ -24,3 +24,9 @@ $ mount /dev/sda /mnt/efi
 ```
 
 When installing grub, also install `os-prober`. You may need to add `GRUB_DISABLE_OS_PROBER=false` to `/etc/grub/default` before running `grub-mkconfig`. If it detects Windows 10, it should be set up correctly.
+
+### Graphics Driver
+
+```bash
+$ sudo pacman -S xf86-vide-nouveau
+```
