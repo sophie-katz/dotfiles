@@ -46,12 +46,13 @@ $ pacman -S \
   xorg-server \
   xorg-xinit \
   ttf-dejavu \
-  terminus-font \
+  ttc-iosevka \
   i3-wm \
   rxvt-unicode \
   dmenu \
   i3status \
-  git
+  git \
+  base-devel
 ```
 
 ### Sudo
