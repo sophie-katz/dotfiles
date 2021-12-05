@@ -30,3 +30,6 @@ When installing grub, also install `os-prober`. You may need to add `GRUB_DISABL
 ```bash
 $ sudo pacman -S xf86-vide-nouveau
 ```
+
+Add `nouveau` to the `MODULES` section of `/etc/mkinitcpio.config`.
+
