@@ -80,28 +80,6 @@ $ mkdir \
 
 Clone this repository into `~/code`.
 
-### Urxvtd
-
-Set up `urxvtd` by placing the following in `/etc/systemd/system/urxvtd@.service`:
-
-```
-[Unit]
-Description=RXVT-Unicode Daemon
-
-[Service]
-User=%i
-ExecStart=/usr/bin/urxvtd -q -o
-
-[Install]
-WantedBy=multi-user.target
-```
-
-And then enabling the service:
-
-```bash
-$ sudo servicectl enable urxvtd@sophie
-```
-
 ### Xinit/Startx/I3
 
  * See the specific instructions above for graphics driver setup details.
@@ -123,7 +101,6 @@ $ yay -S \
   1password \
   discord \
   google-chrome \
-  spotify
+  spotify \
+  visual-studio-code-bin
 ```
-
-Add Google's [Ultra Violet](https://chrome.google.com/webstore/detail/ultra-violet/lcknjpenlfdlffeafcadkbjfodmmgdip) theme.

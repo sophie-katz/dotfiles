@@ -28,8 +28,18 @@ When installing grub, also install `os-prober`. You may need to add `GRUB_DISABL
 ### Graphics Driver
 
 ```bash
-$ sudo pacman -S xf86-vide-nouveau
+$ sudo pacman -S nvidia nvidia-settings
 ```
 
-Add `nouveau` to the `MODULES` section of `/etc/mkinitcpio.config`.
+Add `nvidia nvidia_modeset nvidia_uvm nvidia_drm` to the `MODULES` section of `/etc/mkinitcpio.config` and rerun `sudo mkinitcpio -P`.
 
+### Audio
+
+Install `pulseaudio pulseaudio-alsa` and start the services:
+
+```bash
+$ systemctl --user enable pulseaudio.socket
+$ systemctl --user enable pulseaudio.service
+$ systemctl --user start pulseaudio.socket
+$ systemctl --user start pulseaudio.service
+```

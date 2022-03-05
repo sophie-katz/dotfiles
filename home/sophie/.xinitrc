@@ -31,5 +31,21 @@ fi
 # Environment variables
 export TERMINAL=urxvtc
 
+# URXVTD
+urxvtd -q -o &
+
+# XRandr
+xrandr \
+	--output DP-0 --pos 0x0 \
+	--output DP-2 --pos 3840x0 \
+	--output HDMI-0 --pos 7680x0
+
+# XSet
+xset dpms 3600 3600 3600
+
+# XInput
+#xinput set-prop 8 282 0.7
+
 # Startup
 exec i3
+

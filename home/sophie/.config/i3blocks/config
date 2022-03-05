@@ -1,0 +1,24 @@
+[disk usage]
+command=echo "HDD $(df -h --output=used / | tail -n1 | tr -d ' ')/$(df -h --output=size / | tail -n1 | tr -d ' ')"
+color=#75715e
+interval=60
+
+[memory]
+command=echo "Mem $(free -h | tail -n2 | head -n1 | cut -d 'i' -f 2 | tr -d ' ')/$(free -h | tail -n2 | head -n1 | cut -d 'i' -f 1 | cut -d ':' -f 2 | tr -d ' ')"
+color=#75715e
+interval=10
+
+[volume]
+command=echo "Vol $(amixer get Master | grep '%' | cut -d '%' -f 1 | cut -d '[' -f 2)"
+interval=1
+
+[datetime]
+command=echo "Philadelphia $(date '+%b %d, %Y - %I:%M %p')"
+color=#856db3
+interval=1
+
+[datetime]
+command=echo "Reykjavik $(TZ=Iceland date '+%b %d, %Y - %I:%M %p')"
+color=#856db3
+interval=1
+
