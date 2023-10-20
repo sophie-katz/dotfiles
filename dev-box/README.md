@@ -31,7 +31,7 @@ Follow these steps to set up a fresh dev box. This is a bare-metal Debian server
 Generate a new user password, root password, MOK PEM pass phrase, and [SSH port](https://it-tools.tech/random-port-generator).
 
 > [!NOTE]  
-> asdf
+> The PEM phrase should not contain any special characters and should follow this regex: `[a-zA-Z0-9]+`.
 
 ![Screenshot of 1Password](1password.png)
 
@@ -39,10 +39,75 @@ Generate a new user password, root password, MOK PEM pass phrase, and [SSH port]
 
 Follow [these instructions](https://www.debian.org/distrib/).
 
-## Users
-
-Add users like so:
+## Run setup
 
 ```shell
-adduser sophie
+# Create Code directory
+mkdir -p /root/Code
+
+# Enter Code directory
+cd /root/Code
+
+# Clone dotfiles
+git clone https://github.com/sophie-katz/dotfiles.git
+
+# Enter dotfiles directory
+cd dotfiles
+
+# Run setup and follow instructions
+bash dev-box/setup.bash
 ```
+
+## Set up Samba
+
+Follow [these instructions](https://wiki.debian.org/Samba/ServerSimple).
+
+## Install CUDA drivers for deep learning
+
+* Follow [these instructions](https://wiki.debian.org/SecureBoot) to disable secure boot.
+
+* [Install proprietary NVIDIA drivers](https://wiki.debian.org/NvidiaGraphicsDrivers#Identification).
+
+* Confirm that the `nvidia` kernel module is loaded:
+
+  ```shell
+  # There should be some results
+  lsmod | grep nvidia
+
+  sudo modinfo nvidia_current
+  ```
+
+* Smoke test the NVIDIA driver:
+
+  ```shell
+  nvidia-smi
+  ```
+
+* Install additional CUDA libraries:
+
+  * Go to https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/. This is a list with a bunch of `*.deb` files for various CUDA libraries and tools.
+
+  * Install the latest applicable versions of these:
+
+    * `cuda-cudart-*.deb`
+
+    * `cuda-cupti-*.deb`
+
+    * `cuda-nvcc-*.deb`
+
+    * `cuda-toolkit-*-config-common_*.deb`
+
+  * If there are any missing dependencies:
+
+    * Run `sudo apt --fix-broken install`
+
+    * Install any missing `*.deb` files from the list above as needed.
+
+  * Confirm that only packages for the correct version are installed:
+
+    ```shell
+    # Make sure all packages are from only one version
+    apt list --installed | grep cuda
+    ```
+
+    If there are any from another version, just uninstall them.

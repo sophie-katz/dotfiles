@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # MIT License
 #
 # Copyright (c) 2023 Sophie Katz
@@ -21,6 +19,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+# NOTE: This script needs to be compatible with both ZSH and BASH
 
 function banner() {
     echo -ne "\033[1;95m"

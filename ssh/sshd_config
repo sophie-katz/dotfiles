@@ -1,0 +1,16 @@
+# This file comes from https://github.com/sophie-katz/dotfiles
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+# Replace PORT with the SSH port from 1Password
+Port PORT
+ListenAddress 0.0.0.0
+
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	/usr/lib/openssh/sftp-server

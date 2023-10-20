@@ -26,7 +26,7 @@ SOFTWARE.
 
 Follow these steps to get set up on macOS. This is compatible with Ventura (13.5.1) so far. Run these commands
 
-```zsh
+```shell
 # Create Code directory
 mkdir -p ~/Code
 

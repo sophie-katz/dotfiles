@@ -27,7 +27,14 @@
 ################################################################################
 
 # Load libraries
-source ${0:a:h}/../utilities/pretty.zsh
+source ${0:a:h}/../utilities/consts.sh
+source ${0:a:h}/../utilities/pretty.sh
+
+# Check if running as root
+if [[ "$(whoami)" == "root" ]]; then
+    log_error "Cannot run this script as root"
+    exit 1
+fi
 
 # Print the banner
 banner
@@ -125,8 +132,6 @@ fi
 # Python
 ################################################################################
 
-PYTHON_VERSION="3.11.6"
-
 log_info "Installing Python $PYTHON_VERSION..."
 
 pyenv install $PYTHON_VERSION
@@ -155,6 +160,18 @@ if [ "$?" -ne "0" ]; then
     exit 1
 fi
 
+log_info "Upgrading Pip..."
+
+python3 -m pip install --upgrade pip
+
+if [ "$?" -eq "0" ]; then
+    log_info "Pip successfully upgraded"
+else
+    log_error "Error while upgrading Pip"
+    exit 1
+fi
+
+
 ################################################################################
 # Rust
 ################################################################################
@@ -179,7 +196,9 @@ log_info "Linking dotfiles..."
 rm ~/.gitconfig && \
     ln -s ${0:a:h}/../git/.gitconfig ~/.gitconfig && \
     rm ~/.zshrc && \
-    ln -s ${0:a:h}/../zsh/.zshrc ~/.zshrc
+    ln -s ${0:a:h}/../zsh/.zshrc ~/.zshrc && \
+    rm ~/.ssh/config && \
+    ln -s ${0:a:h}/../ssh/config ~/.ssh/config
 
 if [ "$?" -eq "0" ]; then
     log_info "Dotfiles successfully linked"
