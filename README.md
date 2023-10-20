@@ -26,6 +26,9 @@ SOFTWARE.
 
 This is where I put my dotfiles and info on how to set myself up on different platforms.
 
+> [!WARNING]  
+> This repository hasn't been tested on a fresh install so far. I'd recommend commenting out most of the setup scripts and then running them piece by piece for safety.
+
 ## Guides
 
 * [macOS](macos/README.md)
