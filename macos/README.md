@@ -24,7 +24,7 @@ SOFTWARE.
 
 # Guide for macOS
 
-Follow these steps to get set up on macOS. This is compatible with Ventura (13.5.1) so far. Run these commands
+Follow these steps to get set up on macOS. Run these commands
 
 ```shell
 # Create Code directory
