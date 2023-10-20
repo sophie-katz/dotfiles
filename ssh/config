@@ -1,0 +1,21 @@
+# This file comes from https://github.com/sophie-katz/dotfiles
+
+# Replace LOCAL_IP with the local IP address of the dev server
+
+Host SophiesDevBoxLocal
+    HostName LOCAL_IP
+    User sophie
+    Port 7237
+
+# Replace GLOBAL_IP with the current global IP address:
+# https://www.whatsmyip.org/
+
+Host SophiesDevBoxGlobal
+    HostName GLOBAL_IP
+    User sophie
+    Port 7237
+
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
